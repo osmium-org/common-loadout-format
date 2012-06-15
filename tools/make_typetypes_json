@@ -1,0 +1,46 @@
+#!/usr/bin/env php
+<?php
+/* Author : Romain "Artefact2" Dalmaso <artefact2@gmail.com>
+ * This program is free software. It comes without any warranty, to
+ * the extent permitted by applicable law. You can redistribute it
+ * and/or modify it under the terms of the Do What The Fuck You Want
+ * To Public License, Version 2, as published by Sam Hocevar. See
+ * http://sam.zoy.org/wtfpl/COPYING for more details. */
+
+/* Create a JSON map (type => [typeid]) for all published typeids
+ * where type is either "ships", "modules", "charges", "implants",
+ * "boosters" or "drones".
+ */
+
+require __DIR__.'/sqlite_script_common.php';
+
+function processtype(SQLite3 $db, array &$types, $categoryname, $filter) {
+	$req = $db->query('SELECT invtypes.typeid FROM invtypes JOIN invgroups ON invgroups.groupid = invtypes.groupid WHERE '.$filter.' AND invgroups.published = 1 AND invtypes.published = 1');
+
+	while($row = $req->fetchArray(SQLITE3_NUM)) {
+		if(!isset($types[$categoryname])) {
+			$types[$categoryname] = array();
+		}
+
+		if(!in_array($row[0], $types[$categoryname])) {
+			$types[$categoryname][] = $row[0];
+		}
+	}
+
+}
+
+function process(SQLite3 $db, array &$types) {
+	processtype($db, $types, 'ships', 'invgroups.categoryid = 6');
+	processtype($db, $types, 'modules', 'invgroups.categoryid IN (7, 32)');
+	processtype($db, $types, 'charges', 'invgroups.categoryid = 8');
+	processtype($db, $types, 'drones', 'invgroups.categoryid = 18');
+	processtype($db, $types, 'boosters', 'invgroups.categoryid = 20 AND invgroups.groupid = 303');
+	processtype($db, $types, 'implants', 'invgroups.categoryid = 20 AND invgroups.groupid <> 303');
+}
+
+function customsort(array &$types) {
+	ksort($types);
+	foreach($types as &$type) {
+		sort($type);
+	}
+}

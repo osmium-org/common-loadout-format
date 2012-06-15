@@ -18,7 +18,7 @@
 
 require __DIR__.'/sqlite_script_common.php';
 
-function process($db, &$typenames) {
+function process(SQLite3 $db, array &$typenames) {
 	$req = $db->query('SELECT typename, typeid FROM invtypes');
 
 	while($row = $req->fetchArray(SQLITE3_NUM)) {
@@ -27,7 +27,7 @@ function process($db, &$typenames) {
 	}
 }
 
-function customsort(&$typenames) {
+function customsort(array &$typenames) {
 	uksort($typenames, function($p, $q) use($typenames) {
 			if($typenames[$p] == $typenames[$q]) {
 				/* Same typeID, sort by key name */
