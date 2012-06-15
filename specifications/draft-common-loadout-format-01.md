@@ -281,12 +281,8 @@ A `module` is a JSON object containing the following keys:
 - `state` (OPTIONAL), a string containing either `offline`,
   `online`, `active` or `overloaded`;
 
-- `charge` (OPTIONAL), a `charge` element (if this is specified, the
-  `charges` key SHOULD NOT be specified);
-
 - `charges` (OPTIONAL), a JSON array containing any number of
-  `charges` (if this is specified, the `charge` key SHOULD NOT be
-  specified).
+  `charges`.
 
 ### 2.7.2. `charge` element                     {#charge-element}
 
@@ -344,13 +340,13 @@ charge presets (only high slots included for brevity):
             {
                 "presetname": "Meta 4 launchers",
                 "modules": [
-                    { "typeid": 8105, "charge": { "typeid": 209 } },
-                    { "typeid": 8105, "charge": { "typeid": 209 } },
-                    { "typeid": 8105, "charge": { "typeid": 209 } },
-                    { "typeid": 8105, "charge": { "typeid": 209 } },
-                    { "typeid": 8105, "charge": { "typeid": 209 } },
-                    { "typeid": 8105, "charge": { "typeid": 209 } },
-                    { "typeid": 8105, "charge": { "typeid": 209 } }
+                    { "typeid": 8105, "charges": [{ "typeid": 209 }] },
+                    { "typeid": 8105, "charges": [{ "typeid": 209 }] },
+                    { "typeid": 8105, "charges": [{ "typeid": 209 }] },
+                    { "typeid": 8105, "charges": [{ "typeid": 209 }] },
+                    { "typeid": 8105, "charges": [{ "typeid": 209 }] },
+                    { "typeid": 8105, "charges": [{ "typeid": 209 }] },
+                    { "typeid": 8105, "charges": [{ "typeid": 209 }] }
                 ],
                 "chargepresets": [
                     { "id": 0, "name": "Scourge missiles" }
@@ -561,28 +557,10 @@ Example of a `drone` section with multiple presets:
       { "id": 2, "name": "Long range" }
   ],
   "modules": [
-      { "typeid": 462, "charge": [
+      { "typeid": 462, "charges": [
           { "typeid": 262, "cpid": 1 },         <-- Discard this one
           { "typeid": 255, "cpid": 2 },
           { "typeid": 21236, "cpid": 1 }        <-- (sic!) Duplicate charge
-      ]}
-  ]
-  ~~~~
-
-- If a module has both `charge` and `charges` keys defined, the entity
-  SHOULD **prepend** (insert at the beginning) the value of `charge`
-  in the `charges` array, and pretend that `charge` is not specified.
-
-  ~~~~
-  "chargepresets": [
-      { "id": 1 }
-  ],
-  "modules": [
-      { "typeid": 28756,
-        "charge": { "typeid": 30030 },          <-- Discard this charge
-        "charges": [                            <-- Confliting definition, prepend the value of "charge" in this array
-          { "typeid": 30486, "cpid": 1 },
-          { "typeid": 30488, "cpid": 0 }        <-- (sic!) Duplicate charge
       ]}
   ]
   ~~~~
