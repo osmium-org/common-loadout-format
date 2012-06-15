@@ -122,6 +122,7 @@ A loadout in the common loadout format typically looks like:
 ~~~~~~~~~~
 {
     "clf-version": 1,
+    "client-version": 384443,
     "metadata": ...,
     "ship": ...,
     "presets": ...,
@@ -132,10 +133,18 @@ A loadout in the common loadout format typically looks like:
 Each subcategory gets its own section below with a more detailed
 specification.
 
-The `clf-version` key MUST be present in the root JSON object. This
-document describes the version 1 of the common loadout format; see
-older or newer revisions of this document for other versions of the
-format.
+The main object can contain the following keys:
+
+- `clf-version` (REQUIRED), an integer representing the version of the
+  format used.
+
+  This document describes the version 1 of the common loadout format;
+  see older or newer revisions of this document for other versions of
+  the format.
+
+- `client-version` (OPTIONAL), an integer representing the build
+  number of the EVE Online client that should be used for this
+  loadout.
 
 ## 2.4. Additional fields                       {#additional-fields}
 
@@ -655,6 +664,10 @@ Example of a `drone` section with multiple presets:
   ~~~~
 
 ## 3.3. Interpolating data                      {#interpolating-data}
+
+- If the `client-version` key is not present in the root JSON object,
+  entities SHOULD assume that the loadout is intended for the current
+  version of the EVE Online client.
 
 - If the `presets` section is not present in a loadout, the entity
   MUST assume that no modules and charges are fitted on the ship, and
