@@ -19,6 +19,10 @@ is still a work in progress.
 This document is placed under the public domain. Discussions about the
 format should take place on `#evefit` at `irc.coldfront.net`.
 
+This draft is set to expire the 15th of July 2012. After this date,
+this draft will either be promoted to become a standard, or a new
+draft will be published.
+
 # Conformance
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
