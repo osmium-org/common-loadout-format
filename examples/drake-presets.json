@@ -1,0 +1,735 @@
+{
+    "clf-version": 1,
+    "X-generatedby": "Osmium-e2693f8-dirty",
+    "metadata": {
+        "title": "Versatile PVP Drake",
+        "description": "Pretty good all-around.",
+        "creationdate": "Sat, 16 Jun 2012 09:31:04 +0000",
+        "X-tags": [
+            "pvp",
+            "shield-tank",
+            "buffer-tank",
+            "missile-boat"
+        ]
+    },
+    "ship": {
+        "typeid": 24698,
+        "typename": "Drake"
+    },
+    "presets": [
+        {
+            "presetname": "Tech II tank+launchers",
+            "modules": [
+                {
+                    "typeid": 5975,
+                    "typename": "Experimental 10MN MicroWarpdrive I",
+                    "slottype": "medium",
+                    "index": 0
+                },
+                {
+                    "typeid": 2281,
+                    "typename": "Adaptive Invulnerability Field II",
+                    "slottype": "medium",
+                    "index": 1
+                },
+                {
+                    "typeid": 3841,
+                    "typename": "Large Shield Extender II",
+                    "slottype": "medium",
+                    "index": 2
+                },
+                {
+                    "typeid": 19812,
+                    "typename": "Parallel Weapon Navigation Transmitter",
+                    "slottype": "medium",
+                    "index": 3
+                },
+                {
+                    "typeid": 5399,
+                    "typename": "J5 Prototype Warp Disruptor I",
+                    "slottype": "medium",
+                    "index": 4
+                },
+                {
+                    "typeid": 4031,
+                    "typename": "Patterned Stasis Web I",
+                    "slottype": "medium",
+                    "index": 5
+                },
+                {
+                    "typeid": 2048,
+                    "typename": "Damage Control II",
+                    "slottype": "low",
+                    "index": 0
+                },
+                {
+                    "typeid": 2605,
+                    "typename": "Nanofiber Internal Structure II",
+                    "slottype": "low",
+                    "index": 1
+                },
+                {
+                    "typeid": 22291,
+                    "typename": "Ballistic Control System II",
+                    "slottype": "low",
+                    "index": 2
+                },
+                {
+                    "typeid": 22291,
+                    "typename": "Ballistic Control System II",
+                    "slottype": "low",
+                    "index": 3
+                },
+                {
+                    "typeid": 31790,
+                    "typename": "Medium Core Defense Field Extender I",
+                    "slottype": "rig",
+                    "index": 0
+                },
+                {
+                    "typeid": 31790,
+                    "typename": "Medium Core Defense Field Extender I",
+                    "slottype": "rig",
+                    "index": 1
+                },
+                {
+                    "typeid": 31790,
+                    "typename": "Medium Core Defense Field Extender I",
+                    "slottype": "rig",
+                    "index": 2
+                },
+                {
+                    "typeid": 2410,
+                    "typename": "Heavy Missile Launcher II",
+                    "slottype": "high",
+                    "index": 0,
+                    "charges": [
+                        {
+                            "typeid": 27441,
+                            "typename": "Caldari Navy Scourge Heavy Missile",
+                            "cpid": 0
+                        },
+                        {
+                            "typeid": 209,
+                            "typename": "Scourge Heavy Missile",
+                            "cpid": 1
+                        },
+                        {
+                            "typeid": 24513,
+                            "typename": "Scourge Precision Heavy Missile",
+                            "cpid": 2
+                        },
+                        {
+                            "typeid": 2629,
+                            "typename": "Scourge Fury Heavy Missile",
+                            "cpid": 3
+                        },
+                        {
+                            "typeid": 27489,
+                            "typename": "Caldari Navy Scourge F.O.F. Heavy Missile I",
+                            "cpid": 4
+                        },
+                        {
+                            "typeid": 1818,
+                            "typename": "Scourge F.O.F. Heavy Missile I",
+                            "cpid": 5
+                        }
+                    ]
+                },
+                {
+                    "typeid": 2410,
+                    "typename": "Heavy Missile Launcher II",
+                    "slottype": "high",
+                    "index": 1,
+                    "charges": [
+                        {
+                            "typeid": 27441,
+                            "typename": "Caldari Navy Scourge Heavy Missile",
+                            "cpid": 0
+                        },
+                        {
+                            "typeid": 209,
+                            "typename": "Scourge Heavy Missile",
+                            "cpid": 1
+                        },
+                        {
+                            "typeid": 24513,
+                            "typename": "Scourge Precision Heavy Missile",
+                            "cpid": 2
+                        },
+                        {
+                            "typeid": 2629,
+                            "typename": "Scourge Fury Heavy Missile",
+                            "cpid": 3
+                        },
+                        {
+                            "typeid": 27489,
+                            "typename": "Caldari Navy Scourge F.O.F. Heavy Missile I",
+                            "cpid": 4
+                        },
+                        {
+                            "typeid": 1818,
+                            "typename": "Scourge F.O.F. Heavy Missile I",
+                            "cpid": 5
+                        }
+                    ]
+                },
+                {
+                    "typeid": 2410,
+                    "typename": "Heavy Missile Launcher II",
+                    "slottype": "high",
+                    "index": 2,
+                    "charges": [
+                        {
+                            "typeid": 27441,
+                            "typename": "Caldari Navy Scourge Heavy Missile",
+                            "cpid": 0
+                        },
+                        {
+                            "typeid": 209,
+                            "typename": "Scourge Heavy Missile",
+                            "cpid": 1
+                        },
+                        {
+                            "typeid": 24513,
+                            "typename": "Scourge Precision Heavy Missile",
+                            "cpid": 2
+                        },
+                        {
+                            "typeid": 2629,
+                            "typename": "Scourge Fury Heavy Missile",
+                            "cpid": 3
+                        },
+                        {
+                            "typeid": 27489,
+                            "typename": "Caldari Navy Scourge F.O.F. Heavy Missile I",
+                            "cpid": 4
+                        },
+                        {
+                            "typeid": 1818,
+                            "typename": "Scourge F.O.F. Heavy Missile I",
+                            "cpid": 5
+                        }
+                    ]
+                },
+                {
+                    "typeid": 2410,
+                    "typename": "Heavy Missile Launcher II",
+                    "slottype": "high",
+                    "index": 3,
+                    "charges": [
+                        {
+                            "typeid": 27441,
+                            "typename": "Caldari Navy Scourge Heavy Missile",
+                            "cpid": 0
+                        },
+                        {
+                            "typeid": 209,
+                            "typename": "Scourge Heavy Missile",
+                            "cpid": 1
+                        },
+                        {
+                            "typeid": 24513,
+                            "typename": "Scourge Precision Heavy Missile",
+                            "cpid": 2
+                        },
+                        {
+                            "typeid": 2629,
+                            "typename": "Scourge Fury Heavy Missile",
+                            "cpid": 3
+                        },
+                        {
+                            "typeid": 27489,
+                            "typename": "Caldari Navy Scourge F.O.F. Heavy Missile I",
+                            "cpid": 4
+                        },
+                        {
+                            "typeid": 1818,
+                            "typename": "Scourge F.O.F. Heavy Missile I",
+                            "cpid": 5
+                        }
+                    ]
+                },
+                {
+                    "typeid": 2410,
+                    "typename": "Heavy Missile Launcher II",
+                    "slottype": "high",
+                    "index": 4,
+                    "charges": [
+                        {
+                            "typeid": 27441,
+                            "typename": "Caldari Navy Scourge Heavy Missile",
+                            "cpid": 0
+                        },
+                        {
+                            "typeid": 209,
+                            "typename": "Scourge Heavy Missile",
+                            "cpid": 1
+                        },
+                        {
+                            "typeid": 24513,
+                            "typename": "Scourge Precision Heavy Missile",
+                            "cpid": 2
+                        },
+                        {
+                            "typeid": 2629,
+                            "typename": "Scourge Fury Heavy Missile",
+                            "cpid": 3
+                        },
+                        {
+                            "typeid": 27489,
+                            "typename": "Caldari Navy Scourge F.O.F. Heavy Missile I",
+                            "cpid": 4
+                        },
+                        {
+                            "typeid": 1818,
+                            "typename": "Scourge F.O.F. Heavy Missile I",
+                            "cpid": 5
+                        }
+                    ]
+                },
+                {
+                    "typeid": 2410,
+                    "typename": "Heavy Missile Launcher II",
+                    "slottype": "high",
+                    "index": 5,
+                    "charges": [
+                        {
+                            "typeid": 27441,
+                            "typename": "Caldari Navy Scourge Heavy Missile",
+                            "cpid": 0
+                        },
+                        {
+                            "typeid": 209,
+                            "typename": "Scourge Heavy Missile",
+                            "cpid": 1
+                        },
+                        {
+                            "typeid": 24513,
+                            "typename": "Scourge Precision Heavy Missile",
+                            "cpid": 2
+                        },
+                        {
+                            "typeid": 2629,
+                            "typename": "Scourge Fury Heavy Missile",
+                            "cpid": 3
+                        },
+                        {
+                            "typeid": 27489,
+                            "typename": "Caldari Navy Scourge F.O.F. Heavy Missile I",
+                            "cpid": 4
+                        },
+                        {
+                            "typeid": 1818,
+                            "typename": "Scourge F.O.F. Heavy Missile I",
+                            "cpid": 5
+                        }
+                    ]
+                },
+                {
+                    "typeid": 2410,
+                    "typename": "Heavy Missile Launcher II",
+                    "slottype": "high",
+                    "index": 6,
+                    "charges": [
+                        {
+                            "typeid": 27441,
+                            "typename": "Caldari Navy Scourge Heavy Missile",
+                            "cpid": 0
+                        },
+                        {
+                            "typeid": 209,
+                            "typename": "Scourge Heavy Missile",
+                            "cpid": 1
+                        },
+                        {
+                            "typeid": 24513,
+                            "typename": "Scourge Precision Heavy Missile",
+                            "cpid": 2
+                        },
+                        {
+                            "typeid": 2629,
+                            "typename": "Scourge Fury Heavy Missile",
+                            "cpid": 3
+                        },
+                        {
+                            "typeid": 27489,
+                            "typename": "Caldari Navy Scourge F.O.F. Heavy Missile I",
+                            "cpid": 4
+                        },
+                        {
+                            "typeid": 1818,
+                            "typename": "Scourge F.O.F. Heavy Missile I",
+                            "cpid": 5
+                        }
+                    ]
+                }
+            ],
+            "chargepresets": [
+                {
+                    "id": 0,
+                    "name": "Caldari Navy Scourges"
+                },
+                {
+                    "id": 1,
+                    "name": "Regular Scourges"
+                },
+                {
+                    "id": 2,
+                    "name": "Precision Scourges"
+                },
+                {
+                    "id": 3,
+                    "name": "Fury Scourges"
+                },
+                {
+                    "id": 4,
+                    "name": "Caldari Navy FOF Scourges"
+                },
+                {
+                    "id": 5,
+                    "name": "FOF Scourges"
+                }
+            ]
+        },
+        {
+            "presetname": "Tech I low skill",
+            "modules": [
+                {
+                    "typeid": 5975,
+                    "typename": "Experimental 10MN MicroWarpdrive I",
+                    "slottype": "medium",
+                    "index": 0,
+                    "state": "active"
+                },
+                {
+                    "typeid": 9632,
+                    "typename": "Limited Adaptive Invulnerability Field I",
+                    "slottype": "medium",
+                    "index": 1,
+                    "state": "active"
+                },
+                {
+                    "typeid": 8529,
+                    "typename": "Large F-S9 Regolith Shield Induction",
+                    "slottype": "medium",
+                    "index": 2,
+                    "state": "online"
+                },
+                {
+                    "typeid": 19812,
+                    "typename": "Parallel Weapon Navigation Transmitter",
+                    "slottype": "medium",
+                    "index": 3,
+                    "state": "active"
+                },
+                {
+                    "typeid": 5399,
+                    "typename": "J5 Prototype Warp Disruptor I",
+                    "slottype": "medium",
+                    "index": 4,
+                    "state": "active"
+                },
+                {
+                    "typeid": 4031,
+                    "typename": "Patterned Stasis Web I",
+                    "slottype": "medium",
+                    "index": 5,
+                    "state": "active"
+                },
+                {
+                    "typeid": 2048,
+                    "typename": "Damage Control II",
+                    "slottype": "low",
+                    "index": 0,
+                    "state": "active"
+                },
+                {
+                    "typeid": 2605,
+                    "typename": "Nanofiber Internal Structure II",
+                    "slottype": "low",
+                    "index": 1,
+                    "state": "online"
+                },
+                {
+                    "typeid": 22291,
+                    "typename": "Ballistic Control System II",
+                    "slottype": "low",
+                    "index": 2,
+                    "state": "online"
+                },
+                {
+                    "typeid": 22291,
+                    "typename": "Ballistic Control System II",
+                    "slottype": "low",
+                    "index": 3,
+                    "state": "online"
+                },
+                {
+                    "typeid": 31790,
+                    "typename": "Medium Core Defense Field Extender I",
+                    "slottype": "rig",
+                    "index": 0,
+                    "state": "online"
+                },
+                {
+                    "typeid": 31790,
+                    "typename": "Medium Core Defense Field Extender I",
+                    "slottype": "rig",
+                    "index": 1,
+                    "state": "online"
+                },
+                {
+                    "typeid": 31790,
+                    "typename": "Medium Core Defense Field Extender I",
+                    "slottype": "rig",
+                    "index": 2,
+                    "state": "online"
+                },
+                {
+                    "typeid": 7997,
+                    "typename": "XR-3200 Heavy Missile Bay",
+                    "slottype": "high",
+                    "index": 0,
+                    "state": "active",
+                    "charges": [
+                        {
+                            "typeid": 27441,
+                            "typename": "Caldari Navy Scourge Heavy Missile",
+                            "cpid": 0
+                        },
+                        {
+                            "typeid": 209,
+                            "typename": "Scourge Heavy Missile",
+                            "cpid": 1
+                        },
+                        {
+                            "typeid": 27489,
+                            "typename": "Caldari Navy Scourge F.O.F. Heavy Missile I",
+                            "cpid": 2
+                        },
+                        {
+                            "typeid": 1818,
+                            "typename": "Scourge F.O.F. Heavy Missile I",
+                            "cpid": 3
+                        }
+                    ]
+                },
+                {
+                    "typeid": 7997,
+                    "typename": "XR-3200 Heavy Missile Bay",
+                    "slottype": "high",
+                    "index": 1,
+                    "state": "active",
+                    "charges": [
+                        {
+                            "typeid": 27441,
+                            "typename": "Caldari Navy Scourge Heavy Missile",
+                            "cpid": 0
+                        },
+                        {
+                            "typeid": 209,
+                            "typename": "Scourge Heavy Missile",
+                            "cpid": 1
+                        },
+                        {
+                            "typeid": 27489,
+                            "typename": "Caldari Navy Scourge F.O.F. Heavy Missile I",
+                            "cpid": 2
+                        },
+                        {
+                            "typeid": 1818,
+                            "typename": "Scourge F.O.F. Heavy Missile I",
+                            "cpid": 3
+                        }
+                    ]
+                },
+                {
+                    "typeid": 7997,
+                    "typename": "XR-3200 Heavy Missile Bay",
+                    "slottype": "high",
+                    "index": 2,
+                    "state": "active",
+                    "charges": [
+                        {
+                            "typeid": 27441,
+                            "typename": "Caldari Navy Scourge Heavy Missile",
+                            "cpid": 0
+                        },
+                        {
+                            "typeid": 209,
+                            "typename": "Scourge Heavy Missile",
+                            "cpid": 1
+                        },
+                        {
+                            "typeid": 27489,
+                            "typename": "Caldari Navy Scourge F.O.F. Heavy Missile I",
+                            "cpid": 2
+                        },
+                        {
+                            "typeid": 1818,
+                            "typename": "Scourge F.O.F. Heavy Missile I",
+                            "cpid": 3
+                        }
+                    ]
+                },
+                {
+                    "typeid": 7997,
+                    "typename": "XR-3200 Heavy Missile Bay",
+                    "slottype": "high",
+                    "index": 3,
+                    "state": "active",
+                    "charges": [
+                        {
+                            "typeid": 27441,
+                            "typename": "Caldari Navy Scourge Heavy Missile",
+                            "cpid": 0
+                        },
+                        {
+                            "typeid": 209,
+                            "typename": "Scourge Heavy Missile",
+                            "cpid": 1
+                        },
+                        {
+                            "typeid": 27489,
+                            "typename": "Caldari Navy Scourge F.O.F. Heavy Missile I",
+                            "cpid": 2
+                        },
+                        {
+                            "typeid": 1818,
+                            "typename": "Scourge F.O.F. Heavy Missile I",
+                            "cpid": 3
+                        }
+                    ]
+                },
+                {
+                    "typeid": 7997,
+                    "typename": "XR-3200 Heavy Missile Bay",
+                    "slottype": "high",
+                    "index": 4,
+                    "state": "active",
+                    "charges": [
+                        {
+                            "typeid": 27441,
+                            "typename": "Caldari Navy Scourge Heavy Missile",
+                            "cpid": 0
+                        },
+                        {
+                            "typeid": 209,
+                            "typename": "Scourge Heavy Missile",
+                            "cpid": 1
+                        },
+                        {
+                            "typeid": 27489,
+                            "typename": "Caldari Navy Scourge F.O.F. Heavy Missile I",
+                            "cpid": 2
+                        },
+                        {
+                            "typeid": 1818,
+                            "typename": "Scourge F.O.F. Heavy Missile I",
+                            "cpid": 3
+                        }
+                    ]
+                },
+                {
+                    "typeid": 7997,
+                    "typename": "XR-3200 Heavy Missile Bay",
+                    "slottype": "high",
+                    "index": 5,
+                    "state": "active",
+                    "charges": [
+                        {
+                            "typeid": 27441,
+                            "typename": "Caldari Navy Scourge Heavy Missile",
+                            "cpid": 0
+                        },
+                        {
+                            "typeid": 209,
+                            "typename": "Scourge Heavy Missile",
+                            "cpid": 1
+                        },
+                        {
+                            "typeid": 27489,
+                            "typename": "Caldari Navy Scourge F.O.F. Heavy Missile I",
+                            "cpid": 2
+                        },
+                        {
+                            "typeid": 1818,
+                            "typename": "Scourge F.O.F. Heavy Missile I",
+                            "cpid": 3
+                        }
+                    ]
+                },
+                {
+                    "typeid": 7997,
+                    "typename": "XR-3200 Heavy Missile Bay",
+                    "slottype": "high",
+                    "index": 6,
+                    "state": "active",
+                    "charges": [
+                        {
+                            "typeid": 27441,
+                            "typename": "Caldari Navy Scourge Heavy Missile",
+                            "cpid": 0
+                        },
+                        {
+                            "typeid": 209,
+                            "typename": "Scourge Heavy Missile",
+                            "cpid": 1
+                        },
+                        {
+                            "typeid": 27489,
+                            "typename": "Caldari Navy Scourge F.O.F. Heavy Missile I",
+                            "cpid": 2
+                        },
+                        {
+                            "typeid": 1818,
+                            "typename": "Scourge F.O.F. Heavy Missile I",
+                            "cpid": 3
+                        }
+                    ]
+                }
+            ],
+            "chargepresets": [
+                {
+                    "id": 0,
+                    "name": "Calari Navy Scourges"
+                },
+                {
+                    "id": 1,
+                    "name": "Regular Scourges"
+                },
+                {
+                    "id": 2,
+                    "name": "Caldari Navy FOF Scourges"
+                },
+                {
+                    "id": 3,
+                    "name": "FOF Scourges"
+                }
+            ]
+        }
+    ],
+    "drones": [
+        {
+            "presetname": "Combat Drones",
+            "inspace": [
+                {
+                    "typeid": 2488,
+                    "typename": "Warrior II",
+                    "quantity": 5
+                }
+            ]
+        },
+        {
+            "presetname": "ECM Drones",
+            "inspace": [
+                {
+                    "typeid": 23707,
+                    "typename": "Hornet EC-300",
+                    "quantity": 5
+                }
+            ]
+        }
+    ]
+}
