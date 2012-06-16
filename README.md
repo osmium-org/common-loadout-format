@@ -21,12 +21,13 @@ please read (and apply) the following:
 
 - Your validator should read the JSON loadout from standard input,
   spit its errors in the standard error stream (`stderr`) and have a
-  return value of zero if the validation succeeded, or non-zero if the
-  loadout was invalid.
+  return value of `0` if the validation succeeded without warnings,
+  `1` if the validation succeeded with some warnings, or anything else
+  if the validation failed.
 
-- The binary/executable script should be called "validator" and should
+- The binary/executable script should be called `validator` and should
   be callable without any arguments. If it requires compiling, use a
-  Makefile rule to invoke the compiler.
+  `Makefile` rule to invoke the compiler.
 
 - Assume nothing. This is a reference implementation, so being
   pedantic is crucial. Use and abuse the helper JSON files. Cover all
