@@ -32,11 +32,6 @@ function warning($message, $near = null) {
 	print_generic_error('Warning: '.$message, $near);
 }
 
-function reset_state(&$errors) {
-	global $__clf_had_warnings, $__clf_errors;
-	$__clf_had_warnings = false;
-}
-
 function notice($message, $near = null) {
 	print_generic_error('Notice: '.$message, $near);
 }

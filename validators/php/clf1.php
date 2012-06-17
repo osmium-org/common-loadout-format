@@ -122,6 +122,17 @@ function validate_preset_1($preset) {
 		}
 
 		assume_unique_names($preset['chargepresets'], 'name');
+
+		/* Enforce preset id uniqueness */
+		$ids = array();
+		foreach($preset['chargepresets'] as $cp) {
+			$id = $cp['id'];
+			if(isset($ids[$id])) {
+				warning("charge preset has a duplicate id", $cp);
+			} else {
+				$ids[$id] = true;
+			}
+		}
 	}
 }
 
