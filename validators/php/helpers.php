@@ -85,7 +85,7 @@ function assume_thing_with_typeid($type, $entity) {
 	}
 
 	if(!check_typeof_type($entity['typeid'], $type)) {
-		fatal("required key 'typeid' does not contain the typeid of a valid $type", $module);
+		fatal("required key 'typeid' does not contain the typeid of a valid $type", $entity);
 		return FATAL;
 	}
 
