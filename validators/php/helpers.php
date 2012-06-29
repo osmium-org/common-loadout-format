@@ -111,7 +111,7 @@ function assume_unique_names($presets, $namekey = 'presetname') {
 }
 
 function in_sorted_array($number, array $a) {
-	if($a == array()) return false;
+	if($a === array()) return false;
 
 	$end = end($a);
 	$start = reset($a);
@@ -127,7 +127,7 @@ function in_sorted_array($number, array $a) {
 
 		if($middlev === $number) return true;
 		if($middlev < $number) {
-			$m = $middle;
+			$m = $middle + 1;
 		} else {
 			$M = $middle;
 		}
