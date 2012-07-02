@@ -192,3 +192,13 @@ function check_charge_can_be_fitted_to_module($moduleid, $chargeid) {
 
 	return in_sorted_array($chargeid, $cache[$moduleid]);
 }
+
+function get_typeid($typename) {
+	static $cache = null;
+	if($cache === null) {
+		$cache = json_decode(file_get_contents(__DIR__.'/../../helpers/typenames.json'), true);
+	}
+
+	if(!isset($cache[$typename])) return false;
+	return $cache[$typename];
+}
