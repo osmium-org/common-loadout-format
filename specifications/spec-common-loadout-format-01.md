@@ -1,7 +1,6 @@
 Common Loadout Format
 
-# Common Loadout Format
-## Draft specification, version 1
+# Common Loadout Format, version 1
 
 **********
 
@@ -13,15 +12,8 @@ achieve portability, completeness, extendability and longevity.
 
 # Status of this memo
 
-This document is a draft, and it is inappropriate to rely on it as it
-is still a work in progress.
-
 This document is placed under the public domain. Discussions about the
 format should take place on `#evefit` at `irc.coldfront.net`.
-
-This draft is set to expire the 15th of July 2012. After this date,
-this draft will either be promoted to become a standard, or a new
-draft will be published.
 
 # Conformance
 
