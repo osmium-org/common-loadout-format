@@ -45,7 +45,7 @@ JOIN invtypes ON $modattribsvalue = invtypes.groupid
 LEFT JOIN $dgmtypeattribs AS chargesize ON chargesize.attributeid = 128
                                            AND chargesize.typeid = invtypes.typeid
 WHERE modattribs.attributeid IN (604, 605, 606, 609, 610) 
-      AND ($chargesizevalue IS NULL 
+      AND ($chargesizevalue IS NULL OR $modchargesizevalue IS NULL
            OR $chargesizevalue = $modchargesizevalue) AND invtypes.published = 1");
 
 	while($row = $req->fetchArray(SQLITE3_NUM)) {
