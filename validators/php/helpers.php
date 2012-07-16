@@ -120,6 +120,7 @@ function in_sorted_array($number, array $a) {
 	$M = count($a) - 1;
 
 	if($number > $end || $number < $start) return false;
+	if($number === $end || $number === $start) return true;
 
 	while($m < $M) {
 		$middle = (int)(($m + $M) / 2);
