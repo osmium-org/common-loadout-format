@@ -42,9 +42,11 @@ FROM $dgmtypeattribs AS modattribs
 LEFT JOIN $dgmtypeattribs modchargesize ON modchargesize.attributeid = 128
                                            AND modchargesize.typeid = modattribs.typeid 
 JOIN invtypes ON $modattribsvalue = invtypes.groupid
+JOIN invtypes AS modcapacity ON modcapacity.typeid = modattribs.typeid
 LEFT JOIN $dgmtypeattribs AS chargesize ON chargesize.attributeid = 128
                                            AND chargesize.typeid = invtypes.typeid
 WHERE modattribs.attributeid IN (604, 605, 606, 609, 610) 
+      AND (modcapacity.capacity >= invtypes.volume)
       AND ($chargesizevalue IS NULL OR $modchargesizevalue IS NULL
            OR $chargesizevalue = $modchargesizevalue) AND invtypes.published = 1");
 
