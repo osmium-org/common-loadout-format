@@ -1,8 +1,8 @@
 # Latest dump file
-LATESTDUMP=inf11
+LATESTDUMP=inf12
 
 # Dump files in chronological order
-ALLDUMPS=inc100 inc101 inc14 inc15 inca10 cru10b cru110 cru15 cru16 esc10 inf10 inf11
+ALLDUMPS=inc100 inc101 inc14 inc15 inca10 cru10b cru110 cru15 cru16 esc10 inf10 inf11 inf12
 
 # Path where the dump files are located, with the trailing /
 DUMPPATH=~/Documents/EVE/dumps/
