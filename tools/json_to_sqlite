@@ -74,7 +74,11 @@ foreach(glob($argv[1].'/*.json') as $jsonfile) {
 	$i = 0;
 	foreach($rows as $row) {
 		$values = array();
-		foreach($row as $v) {
+		foreach($row as $k => $v) {
+			/* XXX: Dirty dirty hack: ignore DUST stuff since it has
+			 * duplicate typenames with some EVE modules */
+			if($k === 'typeID' && $v >= 350000) continue 2;
+
 			if($v === null) $v = 'NULL';
 			else if(is_string($v)) $v = "'".$db->escapeString($v)."'";
 			else if(is_bool($v)) $v = $v ? 1 : 0;
