@@ -1,5 +1,5 @@
 # Dump files in chronological order
-ALLDUMPS=inc100 inc101 inc14 inc15 inca10 cru10b cru110 cru15 cru16 esc10 inf10 inf11 inf12 inf13 ret10 ret11
+ALLDUMPS=inc100 inc101 inc14 inc15 inca10 cru10b cru110 cru15 cru16 esc10 inf10 inf11 inf12 inf13 ret10 ret11 ret12
 
 # Latest dump file
 LATESTDUMP=$(lastword $(ALLDUMPS))
