@@ -33,31 +33,39 @@ function validate_clf($jsonstring, &$errors = array()) {
 		} else {
 			fatal("JSON decoding error ".$error);
 		}
+		$errors = $__clf_errors;
 		return FATAL;
 	}
 
 	if(!is_array($json)) {
 		fatal("the root element must be a JSON object");
+		$errors = $__clf_errors;
 		return FATAL;
 	}
 
 	if(!isset($json['clf-version'])) {
 		fatal("required key 'clf-version' cannot be found in the root object");
+		$errors = $__clf_errors;
 		return FATAL;
 	}
 
 	if(!is_int($json['clf-version'])) {
 		fatal("key 'clf-version' must be an integer (got ".gettype($json['clf-version']).")");
+		$errors = $__clf_errors;
 		return FATAL;
 	}
 
 	$funcname = __NAMESPACE__.'\validate_clf_version_'.$json['clf-version'];
 	if(!function_exists($funcname)) {
 		fatal("this validator does not support this version of the common loadout format");
+		$errors = $__clf_errors;
 		return FATAL;
 	}
 
-	if($funcname($json) === FATAL) return FATAL;
+	if($funcname($json) === FATAL) {
+		$errors = $__clf_errors;
+		return FATAL;
+	}
 
 	$errors = $__clf_errors;
 	return ($__clf_had_warnings ? OK_WITH_WARNINGS : OK);
