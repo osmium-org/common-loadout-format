@@ -20,7 +20,10 @@ $dbfile = 'eve-sqlite3-phobos.db';
 $db = new SQLite3($dbfile, SQLITE3_OPEN_CREATE | SQLITE3_OPEN_READWRITE);
 
 foreach(glob($argv[1].'/*.json') as $jsonfile) {
-	$table = strtolower(pathinfo($jsonfile, PATHINFO_FILENAME));
+	$table = preg_replace(
+		'%[^a-z0-9_-]%', '',
+		strtolower(pathinfo($jsonfile, PATHINFO_FILENAME))
+	);
 	echo $table." ";
 
 	$q = 'CREATE TABLE IF NOT EXISTS '.$table;
