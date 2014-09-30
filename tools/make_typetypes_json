@@ -15,7 +15,7 @@
 require __DIR__.'/sqlite_script_common.php';
 
 function processtype(SQLite3 $db, array &$types, $categoryname, $filter) {
-	$req = $db->query('SELECT invtypes.typeid FROM invtypes JOIN invgroups ON invgroups.groupid = invtypes.groupid WHERE '.$filter.' AND invgroups.published = 1 AND invtypes.published = 1');
+	$req = $db->query('SELECT invtypes.typeid FROM invtypes JOIN invgroups ON invgroups.groupid = invtypes.groupid WHERE '.$filter);
 
 	while($row = $req->fetchArray(SQLITE3_NUM)) {
 		if(!isset($types[$categoryname])) {

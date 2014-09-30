@@ -48,7 +48,7 @@ LEFT JOIN $dgmtypeattribs AS chargesize ON chargesize.attributeid = 128
 WHERE modattribs.attributeid IN (604, 605, 606, 609, 610) 
       AND (modcapacity.capacity >= invtypes.volume)
       AND ($chargesizevalue IS NULL OR $modchargesizevalue IS NULL
-           OR $chargesizevalue = $modchargesizevalue) AND invtypes.published = 1");
+           OR $chargesizevalue = $modchargesizevalue)");
 
 	while($row = $req->fetchArray(SQLITE3_NUM)) {
 		list($moduleid, $chargeid) = $row;

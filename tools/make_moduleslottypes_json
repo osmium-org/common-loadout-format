@@ -23,7 +23,7 @@ function process(SQLite3 $db, array &$modules) {
 		3772 => 'subsystem',
 		);
 
-	$req = $db->query('SELECT invtypes.typeid, effectid FROM invtypes JOIN dgmtypeeffects ON invtypes.typeid = dgmtypeeffects.typeid AND effectid IN ('.implode(',', array_keys($moduletypes)).') WHERE invtypes.published = 1');
+	$req = $db->query('SELECT invtypes.typeid, effectid FROM invtypes JOIN dgmtypeeffects ON invtypes.typeid = dgmtypeeffects.typeid AND effectid IN ('.implode(',', array_keys($moduletypes)).')');
 
 	foreach($moduletypes as $type) {
 		$modules[$type] = array();
