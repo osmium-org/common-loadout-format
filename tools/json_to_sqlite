@@ -20,7 +20,9 @@ $dbfile = 'eve-sqlite3-phobos.db';
 if(file_exists($dbfile)) unlink($dbfile);
 $db = new SQLite3($dbfile, SQLITE3_OPEN_CREATE | SQLITE3_OPEN_READWRITE);
 
-foreach(glob($argv[1].'/*.json') as $jsonfile) {
+/* XXX: other json files are unpredictable. Phobos output changes all
+ * the time and I am tired of paching thing up. */
+foreach(glob($argv[1].'/{dgm,inv}*.json', GLOB_BRACE) as $jsonfile) {
 	$table = preg_replace(
 		'%[^a-z0-9_-]%', '',
 		strtolower(pathinfo($jsonfile, PATHINFO_FILENAME))
@@ -41,10 +43,8 @@ foreach(glob($argv[1].'/*.json') as $jsonfile) {
 		var_dump($jsondata);
 		continue;
 	}
-	
-	foreach(array_flatten($jsondata) as $row) {
-		$rows[] = $row;
-	}
+
+	$rows = $jsondata;
 	
 	if($rows === []) {
 		echo "e\n";
@@ -54,7 +54,7 @@ foreach(glob($argv[1].'/*.json') as $jsonfile) {
 	$types = [];
 
 	/* Try to fetch as many non-NULL values in columns as possible */
-	foreach($rows as $row) {		
+	foreach($rows as $row) {
 		foreach($row as $k => $v) {
 			if(!isset($types[$k])) $types[$k] = null;
 
@@ -83,11 +83,16 @@ foreach(glob($argv[1].'/*.json') as $jsonfile) {
 			continue 2;
 		}
 
-		$columns[] = strtolower($k).' '.$type.' NULL';
+		if(preg_match('%[^a-zA-Z]%', $k)) $k = 'c'.$k;
+
+		$columns[] = preg_replace('%[^a-z0-9_]%', '_', strtolower($k)).' '.$type.' NULL';
 	}
 
 	$q .= " (".implode(', ', $columns).")";
-	$db->query($q);
+	if($db->query($q) === false) {
+		echo $q;
+		die(2);
+	}
 	$db->query('DELETE FROM '.$table);
 
 	$fullvalues = array();
@@ -117,43 +122,23 @@ foreach(glob($argv[1].'/*.json') as $jsonfile) {
 		$fullvalues[] = '('.implode(', ', $values).')';
 
 		if((++$i % $batchsize) == 0) {
-			$db->query('INSERT INTO "'.$table.'" VALUES '.implode(', ', $fullvalues));
+			if($db->query($q = 'INSERT INTO "'.$table.'" VALUES '.implode(', ', $fullvalues)) === false) {
+				echo $q;
+				die(1);
+			}
 			$fullvalues = array();
 			echo ".";
 		}
 	}
 
 	if(count($fullvalues) > 0) {
-		$db->query('INSERT INTO "'.$table.'" VALUES '.implode(', ', $fullvalues));
+		if($db->query($q = 'INSERT INTO "'.$table.'" VALUES '.implode(', ', $fullvalues)) === false) {
+			echo $q;
+			die(1);
+		}
 		$fullvalues = array();
 		echo ",";
 	}
 
 	echo "\n";
-}
-
-function array_flatten($array) {
-	if(!is_array($array)) {
-		yield [ 'data' => $array ];
-		return;
-	}
-	
-	$keys = array_keys($array);
-	if($keys === []) return;
-	$stringsonly = true;
-
-	foreach($array as $k => $v) {
-		if(!is_string($k)) $stringsonly = false;
-		break;
-	}
-
-	if($stringsonly) {
-		yield $array;
-	} else {
-		foreach($array as $v) {
-			foreach(array_flatten($v) as $v2) yield $v2;
-		}
-	}
-	
-	return;
 }
