@@ -147,10 +147,9 @@ function validate_module_1($preset, $module) {
 	}
 
 	if(isset($module['slottype']) &&
-	   !check_module_slottype($module['typeid'], $module['slottype'])) {
-		warning("invalid slot type specified (expected '"
-		        .get_module_slottype($module['typeid'])."', got '"
-		        .$module['slottype']."')", $module);
+	   !in_array($module['typeid'], [ 'low', 'medium', 'high', 'rig', 'subsystem' ])) {
+		warning("key 'slottype' specified, but it contains an invalid value", $module);
+		/* TODO: check that slottype is correct */
 	}
 
 	assume_integer('index', $module);
@@ -172,9 +171,7 @@ function validate_module_1($preset, $module) {
 				return FATAL;
 			}
 
-			if(!check_charge_can_be_fitted_to_module($module['typeid'], $charge['typeid'])) {
-				warning("charge cannot be fitted to module", $charge);
-			}
+			/* TODO: make sure charge can be fitted to module */
 
 			if(assume_integer('cpid', $charge)) {
 				/* Make sure there is a charge preset with this id */

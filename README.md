@@ -30,28 +30,8 @@ please read (and apply) the following:
   `Makefile` rule to invoke the compiler.
 
 - Assume nothing. This is a reference implementation, so being
-  pedantic is crucial. Use and abuse the helper JSON files. Cover all
-  the possible cases.
+  pedantic is crucial.
 
 - The source is more likely to be read than used; write the most
   beautiful code you can, and comment anything you find worthy of an
   explanation.
-
-## Keeping helpers updated
-
-After a major patch/expansion, you will need to update the JSON
-helpers.
-
-You need a SQlite3 dump (or the SDE converted to SQLite3). You can use
-the Phobos dumper to generate JSON tables, then use the
-`tools/json_to_sqlite` script to convert them in a SQLite3 database.
-
-Once you have the new database, update the `Makefile` accordingly,
-then run:
-
-~~~~
-make clean
-make
-~~~~
-
-You can then review the differences and commit the new helpers.

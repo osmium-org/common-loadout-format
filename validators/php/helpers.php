@@ -84,11 +84,6 @@ function assume_thing_with_typeid($type, $entity) {
 		return FATAL;
 	}
 
-	if(!check_typeof_type($entity['typeid'], $type)) {
-		fatal("required key 'typeid' does not contain the typeid of a valid $type", $entity);
-		return FATAL;
-	}
-
 	return assume_string('typename', $entity);
 }
 
@@ -110,33 +105,6 @@ function assume_unique_names($presets, $namekey = 'presetname') {
 	return $duplicatefree;
 }
 
-function in_sorted_array($number, array $a) {
-	if($a === array()) return false;
-
-	$end = end($a);
-	$start = reset($a);
-
-	$m = 0;
-	$M = count($a) - 1;
-
-	if($number > $end || $number < $start) return false;
-	if($number === $end || $number === $start) return true;
-
-	while($m < $M) {
-		$middle = (int)(($m + $M) / 2);
-		$middlev = $a[$middle];
-
-		if($middlev === $number) return true;
-		if($middlev < $number) {
-			$m = $middle + 1;
-		} else {
-			$M = $middle;
-		}
-	}
-
-	return false;
-}
-
 function check_extraneous_properties(array $tocheck, array $expectedkeys) {
 	foreach($tocheck as $k => $v) {
 		if(!in_array($k, $expectedkeys, true)) {
@@ -147,59 +115,4 @@ function check_extraneous_properties(array $tocheck, array $expectedkeys) {
 			}
 		}
 	}
-}
-
-function check_typeof_type($typeid, $expected_type) {
-	static $cache = null;
-	if($cache === null) {
-		$cache = json_decode(file_get_contents(__DIR__.'/../../helpers/typetypes.json'), true);
-	}
-
-	if(!isset($cache[$expected_type.'s'])) return false;
-	
-	return in_sorted_array($typeid, $cache[$expected_type.'s']);
-}
-
-function check_module_slottype($typeid, $expected_type) {
-	static $cache = null;
-	if($cache === null) {
-		$cache = json_decode(file_get_contents(__DIR__.'/../../helpers/moduleslottypes.json'), true);
-	}
-
-	if(!isset($cache[$expected_type])) return false;
-
-	return in_sorted_array($typeid, $cache[$expected_type]);
-}
-
-
-function get_module_slottype($typeid) {
-	static $types = array('high', 'medium', 'low', 'rig', 'subsystem');
-	foreach($types as $type) {
-		if(check_module_slottype($typeid, $type)) {
-			return $type;
-		}
-	}
-
-	return 'unknown';
-}
-
-function check_charge_can_be_fitted_to_module($moduleid, $chargeid) {
-	static $cache = null;
-	if($cache === null) {
-		$cache = json_decode(file_get_contents(__DIR__.'/../../helpers/modulecharges.json'), true);
-	}
-
-	if(!isset($cache[$moduleid])) return false;
-
-	return in_sorted_array($chargeid, $cache[$moduleid]);
-}
-
-function get_typeid($typename) {
-	static $cache = null;
-	if($cache === null) {
-		$cache = json_decode(file_get_contents(__DIR__.'/../../helpers/typenames.json'), true);
-	}
-
-	if(!isset($cache[$typename])) return false;
-	return $cache[$typename];
 }
